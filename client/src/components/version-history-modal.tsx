@@ -24,7 +24,7 @@ export default function VersionHistoryModal({ documentId, onClose }: VersionHist
   const { data: versions = [], isLoading } = useQuery({
     queryKey: ["/api/documents", documentId, "versions"],
     queryFn: async () => {
-      const response = await apiRequest("GET", `/api/documents/${documentId}/versions`, undefined, token);
+      const response = await apiRequest("GET", `/api/documents/${documentId}/versions`, undefined, token!);
       return await response.json();
     },
     enabled: !!documentId && !!token,
@@ -33,7 +33,7 @@ export default function VersionHistoryModal({ documentId, onClose }: VersionHist
   const { data: document } = useQuery({
     queryKey: ["/api/documents", documentId],
     queryFn: async () => {
-      const response = await apiRequest("GET", `/api/documents/${documentId}`, undefined, token);
+      const response = await apiRequest("GET", `/api/documents/${documentId}`, undefined, token!);
       return await response.json();
     },
     enabled: !!documentId && !!token,

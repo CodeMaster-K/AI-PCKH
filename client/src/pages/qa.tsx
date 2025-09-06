@@ -28,7 +28,7 @@ export default function QAPage() {
   const { data: documents = [] } = useQuery({
     queryKey: ["/api/documents"],
     queryFn: async () => {
-      const response = await apiRequest("GET", "/api/documents", undefined, token);
+      const response = await apiRequest("GET", "/api/documents", undefined, token!);
       return await response.json();
     },
     enabled: !!token,
@@ -36,7 +36,7 @@ export default function QAPage() {
 
   const askQuestionMutation = useMutation({
     mutationFn: async (question: string) => {
-      const response = await apiRequest("POST", "/api/ai/qa", { question }, token);
+      const response = await apiRequest("POST", "/api/ai/qa", { question }, token!);
       return await response.json();
     },
     onSuccess: (data, question) => {

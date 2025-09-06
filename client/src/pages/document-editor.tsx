@@ -47,7 +47,7 @@ export default function DocumentEditor() {
   const { data: document, isLoading } = useQuery({
     queryKey: ["/api/documents", documentId],
     queryFn: async () => {
-      const response = await apiRequest("GET", `/api/documents/${documentId}`, undefined, token);
+      const response = await apiRequest("GET", `/api/documents/${documentId}`, undefined, token!);
       return await response.json();
     },
     enabled: isEditing && !!documentId && !!token,
@@ -74,10 +74,10 @@ export default function DocumentEditor() {
       };
 
       if (isEditing) {
-        const response = await apiRequest("PUT", `/api/documents/${documentId}`, payload, token);
+        const response = await apiRequest("PUT", `/api/documents/${documentId}`, payload, token!);
         return await response.json();
       } else {
-        const response = await apiRequest("POST", "/api/documents", payload, token);
+        const response = await apiRequest("POST", "/api/documents", payload, token!);
         return await response.json();
       }
     },
@@ -108,7 +108,7 @@ export default function DocumentEditor() {
         throw new Error("Please provide both title and content before generating summary");
       }
 
-      const response = await apiRequest("POST", "/api/ai/summarize", { title, content }, token);
+      const response = await apiRequest("POST", "/api/ai/summarize", { title, content }, token!);
       return await response.json();
     },
     onSuccess: (data) => {
@@ -140,7 +140,7 @@ export default function DocumentEditor() {
         throw new Error("Please provide both title and content before generating tags");
       }
 
-      const response = await apiRequest("POST", "/api/ai/generate-tags", { title, content }, token);
+      const response = await apiRequest("POST", "/api/ai/generate-tags", { title, content }, token!);
       return await response.json();
     },
     onSuccess: (data) => {

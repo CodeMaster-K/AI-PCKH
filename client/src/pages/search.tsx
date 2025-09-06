@@ -21,7 +21,7 @@ export default function SearchPage() {
     queryKey: ["/api/search", query, searchType],
     queryFn: async () => {
       if (!query.trim()) return [];
-      const response = await apiRequest("GET", `/api/search?q=${encodeURIComponent(query)}&type=${searchType}`, undefined, token);
+      const response = await apiRequest("GET", `/api/search?q=${encodeURIComponent(query)}&type=${searchType}`, undefined, token!);
       return await response.json();
     },
     enabled: false,

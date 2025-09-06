@@ -44,7 +44,7 @@ export default function DocumentCard({ document, currentUser, onEdit, onDelete, 
       const response = await apiRequest("POST", "/api/ai/summarize", {
         title: document.title,
         content: document.content,
-      }, token);
+      }, token!);
       return await response.json();
     },
     onSuccess: (data) => {
@@ -78,7 +78,7 @@ export default function DocumentCard({ document, currentUser, onEdit, onDelete, 
       const response = await apiRequest("POST", "/api/ai/generate-tags", {
         title: document.title,
         content: document.content,
-      }, token);
+      }, token!);
       return await response.json();
     },
     onSuccess: (data) => {

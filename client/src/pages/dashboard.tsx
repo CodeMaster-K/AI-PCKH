@@ -212,9 +212,9 @@ export default function Dashboard() {
                     ))}
                     
                     {allTags
-                      .filter(tag => !selectedFilters.includes(tag))
+                      .filter((tag: string) => !selectedFilters.includes(tag))
                       .slice(0, 5)
-                      .map(tag => (
+                      .map((tag: string) => (
                       <Badge
                         key={tag}
                         variant="outline"
