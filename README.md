@@ -57,10 +57,4 @@ Before you begin, ensure you have the following installed:
 - **PostgreSQL** (v13 or higher)
 - **Google Gemini API Key** (from Google AI Studio)
 
-## 🚀 Getting Started
 
-### 1. Clone the Repository
-
-```bash
-git clone https://github.com/your-username/ai-knowledge-hub.git
-cd ai-knowledge-hub
