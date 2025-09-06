@@ -11,6 +11,7 @@ import Dashboard from "@/pages/dashboard";
 import Search from "@/pages/search";
 import DocumentEditor from "@/pages/document-editor";
 import QA from "@/pages/qa";
+import Support from "@/pages/support";
 import Sidebar from "@/components/sidebar";
 import Footer from "@/components/footer";
 
@@ -26,6 +27,7 @@ function AuthenticatedLayout() {
           <Route path="/document/new" component={DocumentEditor} />
           <Route path="/document/edit/:id" component={DocumentEditor} />
           <Route path="/qa" component={QA} />
+          <Route path="/support" component={Support} />
           <Route component={NotFound} />
         </Switch>
         <Footer />

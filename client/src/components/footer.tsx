@@ -4,10 +4,6 @@ export default function Footer() {
       <div className="max-w-7xl mx-auto flex flex-col md:flex-row items-center justify-between space-y-2 md:space-y-0">
         <div className="flex items-center space-x-4">
           <span>© 2024 AI-Powered Knowledge Hub. All rights reserved.</span>
-          <span className="hidden md:inline">•</span>
-          <span className="hidden md:inline">Phone: +91 6383296799</span>
-          <span className="hidden md:inline">•</span>
-          <span className="hidden md:inline">D Block, KK Nagar, Chennai, Tamil Nadu</span>
         </div>
         <div className="flex items-center space-x-4">
           <span>Developed by</span>

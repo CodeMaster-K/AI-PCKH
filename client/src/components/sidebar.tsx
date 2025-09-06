@@ -11,6 +11,7 @@ import {
   Search, 
   Plus, 
   Bot, 
+  HeadphonesIcon,
   LogOut,
   Brain,
   Bell,
@@ -94,6 +95,16 @@ export default function Sidebar() {
           >
             <Bot className="h-4 w-4 mr-3" />
             AI Q&A
+          </Button>
+        </Link>
+        
+        <Link href="/support" data-testid="nav-support">
+          <Button
+            variant={isActive("/support") ? "secondary" : "ghost"}
+            className="w-full justify-start"
+          >
+            <HeadphonesIcon className="h-4 w-4 mr-3" />
+            Support
           </Button>
         </Link>
       </nav>
